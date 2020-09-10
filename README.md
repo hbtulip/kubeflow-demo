@@ -8,7 +8,7 @@ Kubeflow可以帮助用户在Kubernetes平台上高效的开发、构建、训�
 Kubeflow 1.0 要求工作节点的最低配置为：4 CPU，50 GB storage，12 GB memory，官方建议的Kubernetes版本为 v1.14和v1.15。今天我们尝试在v1.18上进行安装和测试。
 
 <!-- ![](https://www.hmxq.top/kubeflow-demo/tf020.png  " ") -->
-<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf020.png " width="80%"> </div>
+<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf020.png" width="80%"> </div>
 
 ### 安装步骤
 
@@ -30,7 +30,7 @@ cd my-kubeflow
 kfctl apply -V -f ./kfctl_k8s_istio.v1.0.1.yaml
 kubectl get pods -n kubeflow
 ```
-<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf001.png " width="80%"> </div>
+<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf001.png" width="80%"> </div>
 
 ```bash
 #获取外部访问端口，例如：http://192.168.2.152:31380/
