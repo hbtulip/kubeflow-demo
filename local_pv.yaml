@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pipeline-mysql-pv
+  namespace: kubeflow
+  labels:
+    type: local
+    app: pipeline-mysql-pv
+    key: kubeflow-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/pipeline-mysql
+    type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pipeline-minio-pv
+  namespace: kubeflow
+  labels:
+    type: local
+    app: pipeline-minio-pv
+    key: kubeflow-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/pipeline-minio
+    type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: katib-mysql
+  namespace: kubeflow
+  labels:
+    type: local
+    app: katib-mysql
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/katib-mysql
+    type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: metadata-mysql-pv
+  namespace: kubeflow
+  labels:
+    type: local
+    app: metadata-mysql-pv
+    key: kubeflow-pv
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/metadata-mysql
+    type: DirectoryOrCreate
+
