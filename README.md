@@ -30,33 +30,34 @@ cd my-kubeflow
 kfctl apply -V -f ./kfctl_k8s_istio.v1.0.1.yaml
 kubectl get pods -n kubeflow
 ```
-![](https://www.hmxq.top/kubeflow-demo/tf001.png " ")
+<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf001.png " width="80%"> </div>
 
 ```bash
 #获取外部访问端口，例如：http://192.168.2.152:31380/
 kubectl get svc -n istio-system istio-ingressgateway
 ```
-![](https://www.hmxq.top/kubeflow-demo/tf003.png " ")
-
+<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf003.png " width="80%"> </div>
 
 ## Jupyter Nodebook
 
 Jupyter Nodebook是一个开源的Web应用程序，灵活易用可交互，允许用户在线创建实时运行的程序代码，用于构建和训练机器学习模型。对于机器学习初学者来说，学会使用Jupyter Nodebook非常重要。
 
-1、访问Kubeflow，创建命名空间hmxflow；
-2、Nodebook Servers，创建新的hmx-notebook1，注意Docker Image是否可以访问；
+#### 1、访问Kubeflow，创建命名空间hmxflow；
+#### 2、Nodebook Servers，创建新的hmx-notebook1；
+//注意Docker Image是否可以访问；
 //registry.cn-hangzhou.aliyuncs.com/kubeflow-images-public/tensorflow-1.15.2-notebook-cpu:1.0.0
 //registry.cn-hangzhou.aliyuncs.com/kubeflow-images-public/tensorflow-1.15.2-notebook-gpu:1.0.0
 ![](https://www.hmxq.top/kubeflow-demo/tf008.png " ")
 
-3、hmx-notebook1创建成功；
+#### 3、hmx-notebook1创建成功；
 ![](https://www.hmxq.top/kubeflow-demo/tf005.png " ")
 
-4、连接hmx-notebook1，并新建hmx-test
+#### 4、连接hmx-notebook1，并新建hmx-test
 ![](https://www.hmxq.top/kubeflow-demo/tf006.png " ")
 
-5、hmx-notebook1上hmx-test.ipynb的运行结果
+#### 5、hmx-notebook1上hmx-test.ipynb的运行结果
 Accuracy:  0.9015
+
 
 ## TFJob
 模型训练是机器学习最主要的实践场景，尤其以使用机器学习框架TensorFlow进行模型训练最为流行，但是随着机器学习的平台由单机变成集群，这个问题变得复杂了。GPU的调度和绑定，涉及到分布式训练的编排和集群规约属性的配置（cluster spec）也成了数据科学家们巨大的负担。
