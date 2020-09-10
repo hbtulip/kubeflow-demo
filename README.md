@@ -36,7 +36,7 @@ kubectl get pods -n kubeflow
 #获取外部访问端口，例如：http://192.168.2.152:31380/
 kubectl get svc -n istio-system istio-ingressgateway
 ```
-<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf003.png " width="80%"> </div>
+<div align="center"> <img src="https://www.hmxq.top/kubeflow-demo/tf003.png" width="80%"> </div>
 
 ## Jupyter Nodebook
 
